@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 
 import javax.lang.model.element.Element;
 
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.actions;
 
 public class DragAndDrop {
@@ -24,7 +24,7 @@ public class DragAndDrop {
     @Test
     void action(){
 
-        Selenide.open("https://the-internet.herokuapp.com/drag_and_drop");
+        open("https://the-internet.herokuapp.com/drag_and_drop");
 
 SelenideElement elementA = $(By.id("column-a"));
 SelenideElement elementB = $(By.id("column-b"));
@@ -34,7 +34,7 @@ SelenideElement elementB = $(By.id("column-b"));
         elementA.shouldHave(Condition.text("B"));
         elementB.shouldHave(Condition.text("A"));
 
-        Selenide.sleep(5000);
+        sleep(5000);
 
        elementA.dragAndDropTo(elementB);
         elementA.shouldHave(Condition.text("A"));

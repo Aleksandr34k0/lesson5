@@ -21,14 +21,11 @@ public class HomeWork {
     @Test
     void homeWork(){
         Selenide.open("https://github.com/");
-//     $("header").$$("li").get(1).hover()
-     $("header").$$("li").get(1)
-            // $("header").$$("li").findBy(text("Solutions")).hover()
-              .$$("li").findBy(text("Enterprise")).click();
 
-      //  $("#hero-section-brand-heading").shouldHave(text("The AI-powered\n" +
-       //         "developer platform."));
-        Selenide.sleep(6000);
+
+             $("header").$$("li").findBy(text("Solutions")).hover()
+              .$$("li").findBy(text("Enterprise")).click();
+$("#hero-section-brand-heading").shouldHave(text("The AI-powered\n"+"developer platform."));
 
 
     }
